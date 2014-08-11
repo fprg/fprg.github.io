@@ -4,7 +4,7 @@
   <subtitle><![CDATA[いろいろ書いていきます。よろしくお願いします。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/"/>
-  <updated>2014-08-11T15:12:52.733Z</updated>
+  <updated>2014-08-11T15:15:15.871Z</updated>
   <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/</id>
   
   <author>
@@ -19,11 +19,11 @@
     <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/11/hexo_deploy_github/"/>
     <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/11/hexo_deploy_github/</id>
     <published>2014-08-11T13:20:15.000Z</published>
-    <updated>2014-08-11T15:12:43.000Z</updated>
+    <updated>2014-08-11T15:15:01.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoでgithubにデプロイする</p>
 <h1 id="はじめに">はじめに</h1>
 <p>こんにちは。インフラエンジニアレベル１の<a href="http://twitter.com/f_prg" title="f_prg" target="_blank" rel="external">f_prg</a>です。<br>Hexoには、deployする機能があります。<br><a href="http://fprg.github.io/" title="http://fprg.github.io/" target="_blank" rel="external">http://fprg.github.io/</a><br>にデプロイしたいと思います。</p>
-<h1 id="Hexoのプラグイン">Hexoのプラグイン</h1>
+<h1 id="Hexoのデプロイ、github編">Hexoのデプロイ、github編</h1>
 <h2 id="ドキュメント">ドキュメント</h2>
 <p>ドキュメントはコチラです。<br><a href="http://hexo.io/docs/deployment.html" title="http://hexo.io/docs/deployment.html" target="_blank" rel="external">http://hexo.io/docs/deployment.html</a></p>
 <h2 id="_config-ymlに設定を記述します。">_config.ymlに設定を記述します。</h2>
