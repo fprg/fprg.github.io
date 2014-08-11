@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Category: Ruby | f_prgのブログです。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="人生はテキトーに。まったりと。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="f_prgのブログです。">
+<meta property="og:url" content="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/Ruby/">
+<meta property="og:site_name" content="f_prgのブログです。">
+<meta property="og:description" content="人生はテキトーに。まったりと。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="f_prgのブログです。">
+<meta name="twitter:description" content="人生はテキトーに。まったりと。">
+
+  
+    <link rel="alternative" href="/atom.xml" title="f_prgのブログです。" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">f_prgのブログです。</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">いろいろ書いていきます。よろしくお願いします。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-mac_ruby_rbenv" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/10/mac_ruby_rbenv/" class="article-date">
+  <time datetime="2014-08-10T06:05:08.000Z" itemprop="datePublished">Aug 10 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Ruby/">Ruby</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/10/mac_ruby_rbenv/">MacにRubyのrbenvを構築する</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MacにRubyのrbenvを構築する</p>
+<h1 id="はじめに">はじめに</h1>
+<p>こんにちは。インフラエンジニアレベル001の<a href="http://twitter.com/f_prg" title="f_prg" target="_blank" rel="external">f_prg</a>です。<br>Ruby徹底攻略 (WEB+DB PRESS plus) という本を購入して、Macにrbenvの環境を作りましたので、その際の実行ログです。</p>
+<h1 id="構築">構築</h1>
+<h2 id="インストール">インストール</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div></pre></td><td class="code"><pre><div class="line">[<span class="number">17</span>:<span class="number">57</span>:<span class="number">57</span>][f_prg@mba:~]<span class="comment"># brew install openssl libyaml readline gmp</span></div><div class="line">==&gt; Downloading https://downloads.sf.net/project/machomebrew/Bottles/openssl-<span class="number">1.0</span></div><div class="line"><span class="comment">######################################################################## 100.0%</span></div><div class="line">==&gt; Pouring openssl-<span class="number">1.0</span>.<span class="number">1</span>g.mavericks.bottle.tar.gz</div><div class="line">==&gt; Caveats</div><div class="line">A CA file has been bootstrapped using certificates from the system</div><div class="line">keychain. To add additional certificates, place .pem files <span class="keyword">in</span></div><div class="line">  /usr/local/etc/openssl/certs</div><div class="line"></div><div class="line">and run</div><div class="line">  /usr/local/opt/openssl/bin/c_rehash</div><div class="line"></div><div class="line">This formula is keg-only, so it was not symlinked into /usr/local.</div><div class="line"></div><div class="line">Mac OS X already provides this software and installing another version <span class="keyword">in</span></div><div class="line">parallel can cause all kinds of trouble.</div><div class="line"></div><div class="line">The OpenSSL provided by OS X is too old <span class="keyword">for</span> some software.</div><div class="line"></div><div class="line">Generally there are no consequences of this <span class="keyword">for</span> you. If you build your</div><div class="line">own software and it requires this formula, you<span class="string">'ll need to add to your</span></div><div class="line">build variables:</div><div class="line"></div><div class="line">    LDFLAGS:  -L/usr/local/opt/openssl/lib</div><div class="line">    CPPFLAGS: -I/usr/local/opt/openssl/include</div><div class="line"></div><div class="line">==&gt; Summary</div><div class="line">🍺  /usr/local/Cellar/openssl/1.0.1g: 429 files, 15M</div><div class="line">Error: libyaml-0.1.5 already installed</div><div class="line">To install this version, first `brew unlink libyaml'</div><div class="line">Warning: It appears you have MacPorts or Fink installed.</div><div class="line">Software installed with other package managers causes known problems <span class="keyword">for</span></div><div class="line">Homebrew. If a formula fails to build, uninstall MacPorts/Fink and try again.</div><div class="line">==&gt; Downloading https://downloads.sf.net/project/machomebrew/Bottles/readline-<span class="number">6</span>.</div><div class="line"><span class="comment">######################################################################## 100.0%</span></div><div class="line">==&gt; Pouring readline-<span class="number">6.3</span>.<span class="number">5</span>.mavericks.bottle.tar.gz</div><div class="line">==&gt; Caveats</div><div class="line">This formula is keg-only, so it was not symlinked into /usr/local.</div><div class="line"></div><div class="line">OS X provides the BSD libedit library, which shadows libreadline.</div><div class="line">In order to prevent conflicts when programs look <span class="keyword">for</span> libreadline we are</div><div class="line">defaulting this GNU Readline installation to keg-only.</div><div class="line"></div><div class="line">Generally there are no consequences of this <span class="keyword">for</span> you. If you build your</div><div class="line">own software and it requires this formula, you<span class="string">'ll need to add to your</span></div><div class="line">build variables:</div><div class="line"></div><div class="line">    LDFLAGS:  -L/usr/local/opt/readline/lib</div><div class="line">    CPPFLAGS: -I/usr/local/opt/readline/include</div><div class="line"></div><div class="line">==&gt; Summary</div><div class="line">🍺  /usr/local/Cellar/readline/6.3.5: 40 files, 2.1M</div><div class="line">==&gt; Downloading https://downloads.sf.net/project/machomebrew/Bottles/gmp-6.0.0a.</div><div class="line">######################################################################## 100.0%</div><div class="line">==&gt; Pouring gmp-6.0.0a.mavericks.bottle.tar.gz</div><div class="line">🍺  /usr/local/Cellar/gmp/6.0.0a: 15 files, 3.2M</div><div class="line">[17:59:14][f_prg@mba:~]# git clone https://github.com/sstephenson/rbenv.git ~/.rbenv</div><div class="line">Cloning into '/Users/f_prg/.rbenv<span class="string">'...</span></div><div class="line">remote: Counting objects: 1889, done.</div><div class="line">remote: Total 1889 (delta 0), reused 0 (delta 0)</div><div class="line">Receiving objects: 100% (1889/1889), 297.15 KiB | 216.00 KiB/s, done.</div><div class="line">Resolving deltas: 100% (1182/1182), done.</div><div class="line">Checking connectivity... done.</div><div class="line">[21:25:50][f_prg@mba:~]# git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build</div><div class="line">Cloning into '/Users/f_prg/.rbenv/plugins/ruby-build<span class="string">'...</span></div><div class="line">remote: Counting objects: 3548, done.</div><div class="line">remote: Total 3548 (delta 0), reused 0 (delta 0)</div><div class="line">Receiving objects: 100% (3548/3548), 601.68 KiB | 331.00 KiB/s, done.</div><div class="line">Resolving deltas: 100% (1709/1709), done.</div><div class="line">Checking connectivity... done.</div><div class="line">[21:31:36][f_prg@mba:~]# echo '<span class="keyword">export</span> PATH=<span class="string">"<span class="variable">$HOME</span>/.rbenv/bin:<span class="variable">$PATH</span>"</span><span class="string">' &gt;&gt; ~/.bash_profile</span></div><div class="line">[21:31:59][f_prg@mba:~]# echo '<span class="built_in">eval</span> <span class="string">"<span class="variable">$(rbenv init -)</span>"</span><span class="string">' &gt;&gt; ~/.bash_profile</span></div><div class="line">[21:33:27][f_prg@mba:~]# source ~/.bash_profile</div><div class="line">[21:33:40][f_prg@mba:~]# rbenv install --list</div><div class="line">Available versions:</div><div class="line">  1.8.6-p383</div><div class="line">  1.8.6-p420</div><div class="line">  1.8.7-p249</div><div class="line">  1.8.7-p302</div><div class="line">  1.8.7-p334</div><div class="line">  1.8.7-p352</div><div class="line">  1.8.7-p357</div><div class="line">  1.8.7-p358</div><div class="line">  1.8.7-p370</div><div class="line">  1.8.7-p371</div><div class="line">  1.8.7-p374</div><div class="line">  1.8.7-p375</div><div class="line">  1.9.1-p378</div><div class="line">  1.9.1-p430</div><div class="line">  1.9.2-p0</div><div class="line">  1.9.2-p180</div><div class="line">  1.9.2-p290</div><div class="line">  1.9.2-p318</div><div class="line">  1.9.2-p320</div><div class="line">  1.9.2-p326</div><div class="line">  1.9.3-dev</div><div class="line">  1.9.3-p0</div><div class="line">  1.9.3-p125</div><div class="line">  1.9.3-p194</div><div class="line">  1.9.3-p286</div><div class="line">  1.9.3-p327</div><div class="line">  1.9.3-p362</div><div class="line">  1.9.3-p374</div><div class="line">  1.9.3-p385</div><div class="line">  1.9.3-p392</div><div class="line">  1.9.3-p429</div><div class="line">  1.9.3-p448</div><div class="line">  1.9.3-p484</div><div class="line">  1.9.3-p545</div><div class="line">  1.9.3-p547</div><div class="line">  1.9.3-preview1</div><div class="line">  1.9.3-rc1</div><div class="line">  2.0.0-dev</div><div class="line">  2.0.0-p0</div><div class="line">  2.0.0-p195</div><div class="line">  2.0.0-p247</div><div class="line">  2.0.0-p353</div><div class="line">  2.0.0-p451</div><div class="line">  2.0.0-p481</div><div class="line">  2.0.0-preview1</div><div class="line">  2.0.0-preview2</div><div class="line">  2.0.0-rc1</div><div class="line">  2.0.0-rc2</div><div class="line">  2.1.0</div><div class="line">  2.1.0-dev</div><div class="line">  2.1.0-preview1</div><div class="line">  2.1.0-preview2</div><div class="line">  2.1.0-rc1</div><div class="line">  2.1.1</div><div class="line">  2.1.2</div><div class="line">  2.2.0-dev</div><div class="line">  jruby-1.5.6</div><div class="line">  jruby-1.6.3</div><div class="line">  jruby-1.6.4</div><div class="line">  jruby-1.6.5</div><div class="line">  jruby-1.6.5.1</div><div class="line">  jruby-1.6.6</div><div class="line">  jruby-1.6.7</div><div class="line">  jruby-1.6.7.2</div><div class="line">  jruby-1.6.8</div><div class="line">  jruby-1.7.0</div><div class="line">  jruby-1.7.0-preview1</div><div class="line">  jruby-1.7.0-preview2</div><div class="line">  jruby-1.7.0-rc1</div><div class="line">  jruby-1.7.0-rc2</div><div class="line">  jruby-1.7.1</div><div class="line">  jruby-1.7.10</div><div class="line">  jruby-1.7.11</div><div class="line">  jruby-1.7.12</div><div class="line">  jruby-1.7.13</div><div class="line">  jruby-1.7.2</div><div class="line">  jruby-1.7.3</div><div class="line">  jruby-1.7.4</div><div class="line">  jruby-1.7.5</div><div class="line">  jruby-1.7.6</div><div class="line">  jruby-1.7.7</div><div class="line">  jruby-1.7.8</div><div class="line">  jruby-1.7.9</div><div class="line">  jruby-9000+graal-dev</div><div class="line">  jruby-9000-dev</div><div class="line">  maglev-1.0.0</div><div class="line">  maglev-1.1.0-dev</div><div class="line">  maglev-2.0.0-dev</div><div class="line">  mruby-1.0.0</div><div class="line">  mruby-dev</div><div class="line">  rbx-1.2.4</div><div class="line">  rbx-2.0.0</div><div class="line">  rbx-2.0.0-dev</div><div class="line">  rbx-2.0.0-rc1</div><div class="line">  rbx-2.1.0</div><div class="line">  rbx-2.1.1</div><div class="line">  rbx-2.2.0</div><div class="line">  rbx-2.2.1</div><div class="line">  rbx-2.2.10</div><div class="line">  rbx-2.2.2</div><div class="line">  rbx-2.2.3</div><div class="line">  rbx-2.2.4</div><div class="line">  rbx-2.2.5</div><div class="line">  rbx-2.2.6</div><div class="line">  rbx-2.2.7</div><div class="line">  rbx-2.2.9</div><div class="line">  ree-1.8.6-2009.06</div><div class="line">  ree-1.8.7-2009.09</div><div class="line">  ree-1.8.7-2009.10</div><div class="line">  ree-1.8.7-2010.01</div><div class="line">  ree-1.8.7-2010.02</div><div class="line">  ree-1.8.7-2011.03</div><div class="line">  ree-1.8.7-2011.12</div><div class="line">  ree-1.8.7-2012.01</div><div class="line">  ree-1.8.7-2012.02</div><div class="line">  topaz-dev</div><div class="line">[21:39:38][f_prg@mba:~]# rbenv install 2.1.2</div><div class="line">Downloading ruby-2.1.2.tar.gz...</div><div class="line">-&gt; http://dqw8nmjcqpjn7.cloudfront.net/f22a6447811a81f3c808d1c2a5ce3b5f5f0955c68c9a749182feb425589e6635</div><div class="line">Installing ruby-2.1.2...</div><div class="line">Installed ruby-2.1.2 to /Users/f_prg/.rbenv/versions/2.1.2</div><div class="line"></div><div class="line">[22:01:48][f_prg@mba:~]# rbenv global 2.1.2</div><div class="line">[22:01:49][f_prg@mba:~]# rbenv rehash</div><div class="line">[22:01:58][f_prg@mba:~]# ruby -v</div><div class="line">ruby 2.1.2p95 (2014-05-08 revision 45877) [x86_64-darwin13.0]</div></pre></td></tr></table></figure>
+
+<h1 id="まとめ">まとめ</h1>
+<p>簡単にできました。<br>今後、OS入れ替えた際にまた必要になりそうですね。<br>次回は、Centos版も業務でやったので投稿しようと思います。</p>
+<h1 id="参考資料・リンク">参考資料・リンク</h1>
+<p><a href="https://github.com/sstephenson/rbenv" title="rbenv" target="_blank" rel="external">rbenv</a><br><a href="https://github.com/sstephenson/ruby-build" title="ruby-build" target="_blank" rel="external">ruby-build</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/mac_ruby_rbenv/" data-id="cxfbq09l12tgbc2j" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rbenv/">rbenv</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Nodejs/">Node.js</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Node.js</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rbenv/">rbenv</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/tags/Mac/" style="font-size: 10.00px;">Mac</a><a href="/tags/Nodejs/" style="font-size: 20.00px;">Node.js</a><a href="/tags/Ruby/" style="font-size: 10.00px;">Ruby</a><a href="/tags/github/" style="font-size: 10.00px;">github</a><a href="/tags/rbenv/" style="font-size: 10.00px;">rbenv</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/08/11/hexo_deploy_github/">Hexoでgithubにデプロイする</a>
+          </li>
+        
+          <li>
+            <a href="/2014/08/10/hexo_image_setting/">Hexoで画像の設定する</a>
+          </li>
+        
+          <li>
+            <a href="/2014/08/10/hexo_feed_plugin/">HexoのRSSフィードプラグインを使ってみる</a>
+          </li>
+        
+          <li>
+            <a href="/2014/08/10/hexo_site_setup/">Hexoのサイト設定を行う。</a>
+          </li>
+        
+          <li>
+            <a href="/2014/08/10/hexo_install/">Hexoでブログを構築する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 f_prg<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
