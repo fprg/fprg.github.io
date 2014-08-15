@@ -4,7 +4,7 @@
   <subtitle><![CDATA[いろいろ書いていきます。よろしくお願いします。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/"/>
-  <updated>2014-08-12T21:31:31.871Z</updated>
+  <updated>2014-08-15T16:29:50.117Z</updated>
   <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/</id>
   
   <author>
@@ -13,6 +13,43 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[hexo_easy_post]]></title>
+    <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/16/hexo_easy_post/"/>
+    <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/16/hexo_easy_post/</id>
+    <published>2014-08-15T16:24:38.000Z</published>
+    <updated>2014-08-15T16:29:30.000Z</updated>
+    <content type="html"><![CDATA[<p>Hexoの新規投稿をちょっと使いやすくする</p>
+<h1 id="はじめに">はじめに</h1>
+<p>こんにちは。インフラエンジニアレベル１の<a href="http://twitter.com/f_prg" title="f_prg" target="_blank" rel="external">f_prg</a>です。<br>Hexoで新規投稿ファイルを生成しますと、source/_postsフォルダにファイルが生成され、投稿していきますと、ファイルの管理が必要になります。<br>今回はちょっとだけ投稿を使いやすくする方法をご紹介します。</p>
+<h1 id="日付ごとにファイルを生成するようにしする">日付ごとにファイルを生成するようにしする</h1>
+<h2 id="_config-ymlの設定を変更する">_config.ymlの設定を変更する</h2>
+<p>初期状態のconfigは下記の通りですが</p>
+<figure class="highlight _config.yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new_post_name: :title.md # <span class="keyword">File</span> name <span class="keyword">of</span> <span class="keyword">new</span> posts</div></pre></td></tr></table></figure>
+
+<p>を</p>
+<figure class="highlight _config.yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">new_post_name:</span> <span class="symbol">:year/</span><span class="symbol">:month/</span><span class="symbol">:day/</span><span class="symbol">:title</span>.md <span class="comment"># File name of new posts</span></div></pre></td></tr></table></figure>
+
+<p>と変更します。</p>
+<h2 id="新規投稿を生成する">新規投稿を生成する</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[<span class="number">01</span>:<span class="number">20</span>:<span class="number">43</span>][f_prg@mba:_posts]<span class="comment"># hexo new hexo_easy_post</span></div><div class="line">[info] File created at /Users/f_prg/Documents/project/node-hexo-blog/blog/<span class="built_in">source</span>/_posts/<span class="number">2014</span>/<span class="number">08</span>/<span class="number">16</span>/hexo_easy_post.md</div></pre></td></tr></table></figure>
+
+<p>と日付ごとのフォルダができて、ファイルが生成されます。</p>
+<h1 id="まとめ">まとめ</h1>
+<p>できるかなーと思ってちょっとやったら、とても簡単にできました。<br>ちょっと_config.yml変更させるだけで、いろいろとできそうです。</p>
+<h1 id="参考資料・リンク">参考資料・リンク</h1>
+<p>今回はございません。</p>
+]]></content>
+    
+    
+      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Nodejs/"/>
+    
+      <category term="Hexo" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Hexo/"/>
+    
+      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/Nodejs/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hexoのhexo-adminプラグインで管理画面を使う]]></title>

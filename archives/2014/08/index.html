@@ -66,6 +66,68 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo_easy_post" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/16/hexo_easy_post/" class="article-date">
+  <time datetime="2014-08-15T16:24:38.000Z" itemprop="datePublished">Aug 16 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Nodejs/">Node.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/16/hexo_easy_post/">hexo_easy_post</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Hexoの新規投稿をちょっと使いやすくする</p>
+<h1 id="はじめに">はじめに</h1>
+<p>こんにちは。インフラエンジニアレベル１の<a href="http://twitter.com/f_prg" title="f_prg" target="_blank" rel="external">f_prg</a>です。<br>Hexoで新規投稿ファイルを生成しますと、source/_postsフォルダにファイルが生成され、投稿していきますと、ファイルの管理が必要になります。<br>今回はちょっとだけ投稿を使いやすくする方法をご紹介します。</p>
+<h1 id="日付ごとにファイルを生成するようにしする">日付ごとにファイルを生成するようにしする</h1>
+<h2 id="_config-ymlの設定を変更する">_config.ymlの設定を変更する</h2>
+<p>初期状態のconfigは下記の通りですが</p>
+<figure class="highlight _config.yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new_post_name: :title.md # <span class="keyword">File</span> name <span class="keyword">of</span> <span class="keyword">new</span> posts</div></pre></td></tr></table></figure>
+
+<p>を</p>
+<figure class="highlight _config.yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">new_post_name:</span> <span class="symbol">:year/</span><span class="symbol">:month/</span><span class="symbol">:day/</span><span class="symbol">:title</span>.md <span class="comment"># File name of new posts</span></div></pre></td></tr></table></figure>
+
+<p>と変更します。</p>
+<h2 id="新規投稿を生成する">新規投稿を生成する</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[<span class="number">01</span>:<span class="number">20</span>:<span class="number">43</span>][f_prg@mba:_posts]<span class="comment"># hexo new hexo_easy_post</span></div><div class="line">[info] File created at /Users/f_prg/Documents/project/node-hexo-blog/blog/<span class="built_in">source</span>/_posts/<span class="number">2014</span>/<span class="number">08</span>/<span class="number">16</span>/hexo_easy_post.md</div></pre></td></tr></table></figure>
+
+<p>と日付ごとのフォルダができて、ファイルが生成されます。</p>
+<h1 id="まとめ">まとめ</h1>
+<p>できるかなーと思ってちょっとやったら、とても簡単にできました。<br>ちょっと_config.yml変更させるだけで、いろいろとできそうです。</p>
+<h1 id="参考資料・リンク">参考資料・リンク</h1>
+<p>今回はございません。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/16/hexo_easy_post/" data-id="x7brolefe2kgwbm8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hexo_admin_plugin" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/08/13/hexo_admin_plugin/" class="article-date">
@@ -571,7 +633,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Nodejs/">Node.js</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Nodejs/">Node.js</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -580,7 +642,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Node.js</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rbenv/">rbenv</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rbenv/">rbenv</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -598,7 +660,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -608,6 +670,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/08/16/hexo_easy_post/">hexo_easy_post</a>
+          </li>
         
           <li>
             <a href="/2014/08/13/hexo_admin_plugin/">Hexoのhexo-adminプラグインで管理画面を使う</a>
@@ -623,10 +689,6 @@
         
           <li>
             <a href="/2014/08/10/hexo_feed_plugin/">HexoのRSSフィードプラグインを使ってみる</a>
-          </li>
-        
-          <li>
-            <a href="/2014/08/10/hexo_site_setup/">Hexoのサイト設定を行う。</a>
           </li>
         
       </ul>
