@@ -3,9 +3,9 @@
   <title><![CDATA[f_prgのブログです。]]></title>
   <subtitle><![CDATA[いろいろ書いていきます。よろしくお願いします。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/"/>
-  <updated>2014-08-17T04:42:18.532Z</updated>
-  <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/</id>
+  <link href="http://blog.star-flare.com/"/>
+  <updated>2014-08-17T04:56:32.537Z</updated>
+  <id>http://blog.star-flare.com/</id>
   
   <author>
     <name><![CDATA[f_prg]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[HexoにWordPressの記事をマイグレートする]]></title>
-    <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/16/hexo_wordpress_migration/"/>
-    <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/16/hexo_wordpress_migration/</id>
+    <link href="http://blog.star-flare.com/2014/08/16/hexo_wordpress_migration/"/>
+    <id>http://blog.star-flare.com/2014/08/16/hexo_wordpress_migration/</id>
     <published>2014-08-15T22:48:24.000Z</published>
     <updated>2014-08-17T01:22:03.000Z</updated>
     <content type="html"><![CDATA[<p>HexoにWordPressの記事をマイグレートする</p>
@@ -73,18 +73,18 @@
 ]]></content>
     
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/tags/Nodejs/"/>
     
-      <category term="Hexo" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.star-flare.com/tags/Hexo/"/>
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/categories/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hexoの新規投稿をちょっと使いやすくする]]></title>
-    <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/16/hexo_easy_post/"/>
-    <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/16/hexo_easy_post/</id>
+    <link href="http://blog.star-flare.com/2014/08/16/hexo_easy_post/"/>
+    <id>http://blog.star-flare.com/2014/08/16/hexo_easy_post/</id>
     <published>2014-08-15T16:24:38.000Z</published>
     <updated>2014-08-16T02:56:16.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoの新規投稿をちょっと使いやすくする</p>
@@ -111,18 +111,18 @@
 ]]></content>
     
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/tags/Nodejs/"/>
     
-      <category term="Hexo" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.star-flare.com/tags/Hexo/"/>
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/categories/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hexoのhexo-adminプラグインで管理画面を使う]]></title>
-    <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/13/hexo_admin_plugin/"/>
-    <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/13/hexo_admin_plugin/</id>
+    <link href="http://blog.star-flare.com/2014/08/13/hexo_admin_plugin/"/>
+    <id>http://blog.star-flare.com/2014/08/13/hexo_admin_plugin/</id>
     <published>2014-08-12T16:48:00.000Z</published>
     <updated>2014-08-15T22:17:39.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoのhexo-adminプラグインで管理画面を使う</p>
@@ -157,18 +157,18 @@
 ]]></content>
     
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/tags/Nodejs/"/>
     
-      <category term="Hexo" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.star-flare.com/tags/Hexo/"/>
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/categories/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hexoでgithubにデプロイする]]></title>
-    <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/11/hexo_deploy_github/"/>
-    <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/11/hexo_deploy_github/</id>
+    <link href="http://blog.star-flare.com/2014/08/11/hexo_deploy_github/"/>
+    <id>http://blog.star-flare.com/2014/08/11/hexo_deploy_github/</id>
     <published>2014-08-11T13:20:00.000Z</published>
     <updated>2014-08-12T20:25:45.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoでgithubにデプロイする</p>
@@ -195,20 +195,20 @@
 ]]></content>
     
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/tags/Nodejs/"/>
     
-      <category term="Hexo" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.star-flare.com/tags/Hexo/"/>
     
-      <category term="github" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/github/"/>
+      <category term="github" scheme="http://blog.star-flare.com/tags/github/"/>
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/categories/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hexoで画像の設定する]]></title>
-    <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_image_setting/"/>
-    <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_image_setting/</id>
+    <link href="http://blog.star-flare.com/2014/08/10/hexo_image_setting/"/>
+    <id>http://blog.star-flare.com/2014/08/10/hexo_image_setting/</id>
     <published>2014-08-10T11:19:28.000Z</published>
     <updated>2014-08-10T11:51:55.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoで画像の設定する</p>
@@ -242,18 +242,18 @@
 ]]></content>
     
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/tags/Nodejs/"/>
     
-      <category term="Hexo" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.star-flare.com/tags/Hexo/"/>
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/categories/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[HexoのRSSフィードプラグインを使ってみる]]></title>
-    <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_feed_plugin/"/>
-    <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_feed_plugin/</id>
+    <link href="http://blog.star-flare.com/2014/08/10/hexo_feed_plugin/"/>
+    <id>http://blog.star-flare.com/2014/08/10/hexo_feed_plugin/</id>
     <published>2014-08-10T10:54:18.000Z</published>
     <updated>2014-08-10T12:43:26.000Z</updated>
     <content type="html"><![CDATA[<p>HexoのRSSフィードプラグインを使ってみる</p>
@@ -280,18 +280,18 @@
 ]]></content>
     
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/tags/Nodejs/"/>
     
-      <category term="Hexo" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.star-flare.com/tags/Hexo/"/>
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/categories/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hexoのサイト設定を行う。]]></title>
-    <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_site_setup/"/>
-    <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_site_setup/</id>
+    <link href="http://blog.star-flare.com/2014/08/10/hexo_site_setup/"/>
+    <id>http://blog.star-flare.com/2014/08/10/hexo_site_setup/</id>
     <published>2014-08-10T08:00:54.000Z</published>
     <updated>2014-08-10T11:29:48.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoのサイト設定を行う</p>
@@ -314,18 +314,18 @@
 ]]></content>
     
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/tags/Nodejs/"/>
     
-      <category term="Hexo" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.star-flare.com/tags/Hexo/"/>
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/categories/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hexoでブログを構築する]]></title>
-    <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_install/"/>
-    <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_install/</id>
+    <link href="http://blog.star-flare.com/2014/08/10/hexo_install/"/>
+    <id>http://blog.star-flare.com/2014/08/10/hexo_install/</id>
     <published>2014-08-10T07:21:19.000Z</published>
     <updated>2014-08-12T20:31:21.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoでブログを構築する</p>
@@ -352,18 +352,18 @@
 ]]></content>
     
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/tags/Nodejs/"/>
     
-      <category term="Hexo" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.star-flare.com/tags/Hexo/"/>
     
-      <category term="Node.js" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/Nodejs/"/>
+      <category term="Node.js" scheme="http://blog.star-flare.com/categories/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[MacにRubyのrbenvを構築する]]></title>
-    <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/mac_ruby_rbenv/"/>
-    <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/mac_ruby_rbenv/</id>
+    <link href="http://blog.star-flare.com/2014/08/10/mac_ruby_rbenv/"/>
+    <id>http://blog.star-flare.com/2014/08/10/mac_ruby_rbenv/</id>
     <published>2014-08-10T06:05:08.000Z</published>
     <updated>2014-08-10T11:11:18.000Z</updated>
     <content type="html"><![CDATA[<p>MacにRubyのrbenvを構築する</p>
@@ -380,20 +380,20 @@
 ]]></content>
     
     
-      <category term="Mac" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Mac/"/>
+      <category term="Mac" scheme="http://blog.star-flare.com/tags/Mac/"/>
     
-      <category term="Ruby" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Ruby/"/>
+      <category term="Ruby" scheme="http://blog.star-flare.com/tags/Ruby/"/>
     
-      <category term="rbenv" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/rbenv/"/>
+      <category term="rbenv" scheme="http://blog.star-flare.com/tags/rbenv/"/>
     
-      <category term="Ruby" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/Ruby/"/>
+      <category term="Ruby" scheme="http://blog.star-flare.com/categories/Ruby/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Hello World]]></title>
-    <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hello-world/"/>
-    <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hello-world/</id>
+    <link href="http://blog.star-flare.com/2014/08/10/hello-world/"/>
+    <id>http://blog.star-flare.com/2014/08/10/hello-world/</id>
     <published>2014-08-10T02:59:08.000Z</published>
     <updated>2014-08-10T02:59:08.000Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
@@ -421,8 +421,8 @@
   
   <entry>
     <title><![CDATA[CloudTrailが東京リージョンで対応されたので使ってみた。]]></title>
-    <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/07/04/cloudtrail-on-tokyo-region/"/>
-    <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/07/04/cloudtrail-on-tokyo-region/</id>
+    <link href="http://blog.star-flare.com/2014/07/04/cloudtrail-on-tokyo-region/"/>
+    <id>http://blog.star-flare.com/2014/07/04/cloudtrail-on-tokyo-region/</id>
     <published>2014-07-04T13:25:57.000Z</published>
     <updated>2014-08-17T01:19:14.000Z</updated>
     <content type="html"><![CDATA[<p>CloudTrailが東京リージョンで出たので、試してみました。<br>AWSのブログは<a href="http://aws.typepad.com/aws_japan/2014/07/cloudtrail-expands-again.html" title="コチラ" target="_blank" rel="external">コチラ</a>です。<br>ま、いまさらですけど。。。<br>対応した、東京リージョンでポンポンとやれば、すぐにできました。</p>
@@ -478,20 +478,20 @@
 ]]></content>
     
     
-      <category term="AWS" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/AWS/"/>
+      <category term="AWS" scheme="http://blog.star-flare.com/tags/AWS/"/>
     
-      <category term="CloudTrail" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/CloudTrail/"/>
+      <category term="CloudTrail" scheme="http://blog.star-flare.com/tags/CloudTrail/"/>
     
-      <category term="AWS" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/AWS/"/>
+      <category term="AWS" scheme="http://blog.star-flare.com/categories/AWS/"/>
     
-      <category term="CloudTrail" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/AWS/CloudTrail/"/>
+      <category term="CloudTrail" scheme="http://blog.star-flare.com/categories/AWS/CloudTrail/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[JAWS-UG さいたま支部第４回勉強会を開催してきました。#jawsug #jawsug_saitama]]></title>
-    <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/06/28/jaws-ug-e38195e38184e3819fe381bee694afe983a8e7acacefbc94e59b9ee58b89e5bcb7e4bc9ae38292e9968be582ace38197e381a6e3818de381bee38197e3819f/"/>
-    <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/06/28/jaws-ug-e38195e38184e3819fe381bee694afe983a8e7acacefbc94e59b9ee58b89e5bcb7e4bc9ae38292e9968be582ace38197e381a6e3818de381bee38197e3819f/</id>
+    <link href="http://blog.star-flare.com/2014/06/28/jaws-ug-e38195e38184e3819fe381bee694afe983a8e7acacefbc94e59b9ee58b89e5bcb7e4bc9ae38292e9968be582ace38197e381a6e3818de381bee38197e3819f/"/>
+    <id>http://blog.star-flare.com/2014/06/28/jaws-ug-e38195e38184e3819fe381bee694afe983a8e7acacefbc94e59b9ee58b89e5bcb7e4bc9ae38292e9968be582ace38197e381a6e3818de381bee38197e3819f/</id>
     <published>2014-06-28T07:19:33.000Z</published>
     <updated>2014-08-16T00:14:05.000Z</updated>
     <content type="html"><![CDATA[<p>昨日、JAWS-UG さいたま支部第４回勉強会を開催してきました。<br>今回はそれぞれのクラウド業者の方々にきていただきました。<br>場所は<a href="http://office7f.com/" title="コワーキングスペース7F" target="_blank" rel="external">コワーキングスペース7F</a>で、ご好意で1000円➡500円にしていただきました。<br>いつも感謝しております。<br>twitterのハッシュタグはこちらです。#jawsug #jawsug_saitama</p>
@@ -606,14 +606,14 @@
 ]]></content>
     
     
-      <category term="AWS" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/AWS/"/>
+      <category term="AWS" scheme="http://blog.star-flare.com/categories/AWS/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Varnish 4.0 Release Partyに参加してきました。 #v4rp #v4rp_tokyo]]></title>
-    <link href="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/04/29/varnish-4-0-release-party/"/>
-    <id>http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/04/29/varnish-4-0-release-party/</id>
+    <link href="http://blog.star-flare.com/2014/04/29/varnish-4-0-release-party/"/>
+    <id>http://blog.star-flare.com/2014/04/29/varnish-4-0-release-party/</id>
     <published>2014-04-29T11:12:45.000Z</published>
     <updated>2014-08-16T23:48:01.000Z</updated>
     <content type="html"><![CDATA[<p>Varnish 4.0 Release Party</p>
@@ -662,13 +662,13 @@
 ]]></content>
     
     
-      <category term="AWS" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/AWS/"/>
+      <category term="AWS" scheme="http://blog.star-flare.com/tags/AWS/"/>
     
-      <category term="Varnish" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/Varnish/"/>
+      <category term="Varnish" scheme="http://blog.star-flare.com/tags/Varnish/"/>
     
-      <category term="勉強会" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/tags/%E5%8B%89%E5%BC%B7%E4%BC%9A/"/>
+      <category term="勉強会" scheme="http://blog.star-flare.com/tags/%E5%8B%89%E5%BC%B7%E4%BC%9A/"/>
     
-      <category term="Varnish" scheme="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/Varnish/"/>
+      <category term="Varnish" scheme="http://blog.star-flare.com/categories/Varnish/"/>
     
   </entry>
   
