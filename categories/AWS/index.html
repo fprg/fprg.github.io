@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Category: AWS | f_prgのブログです。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="人生はテキトーに。まったりと。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="f_prgのブログです。">
+<meta property="og:url" content="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/categories/AWS/">
+<meta property="og:site_name" content="f_prgのブログです。">
+<meta property="og:description" content="人生はテキトーに。まったりと。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="f_prgのブログです。">
+<meta name="twitter:description" content="人生はテキトーに。まったりと。">
+
+  
+    <link rel="alternative" href="/atom.xml" title="f_prgのブログです。" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">f_prgのブログです。</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">いろいろ書いていきます。よろしくお願いします。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-cloudtrail-on-tokyo-region" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/07/04/cloudtrail-on-tokyo-region/" class="article-date">
+  <time datetime="2014-07-04T13:25:57.000Z" itemprop="datePublished">Jul 4 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/AWS/">AWS</a>►<a class="article-category-link" href="/categories/AWS/CloudTrail/">CloudTrail</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/07/04/cloudtrail-on-tokyo-region/">CloudTrailが東京リージョンで対応されたので使ってみた。</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CloudTrailが東京リージョンで出たので、試してみました。<br>AWSのブログは<a href="http://aws.typepad.com/aws_japan/2014/07/cloudtrail-expands-again.html" title="コチラ" target="_blank" rel="external">コチラ</a>です。<br>ま、いまさらですけど。。。<br>対応した、東京リージョンでポンポンとやれば、すぐにできました。</p>
+<ul>
+<li><p>Get Started<br><a href="/2014/07/04/cloudtrail-on-tokyo-region/スクリーンショット-2014-07-02-08.40.28.png"><img src="/2014/07/04/cloudtrail-on-tokyo-region/スクリーンショット-2014-07-02-08.40.28.png" alt="スクリーンショット 2014-07-02 08.40.28"></a></p>
+</li>
+<li><p>項目を選びます。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目</th>
+<th style="text-align:left">作成内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Create a new S3 bucket?</td>
+<td style="text-align:left">Yesを選択し、バケットを作成します</td>
+</tr>
+<tr>
+<td style="text-align:left">S3 bucket*</td>
+<td style="text-align:left">バケット名を入力します。</td>
+</tr>
+<tr>
+<td style="text-align:left">Log file prefix</td>
+<td style="text-align:left">今回は使いません。</td>
+</tr>
+<tr>
+<td style="text-align:left">Include global services?</td>
+<td style="text-align:left">Yesを選択</td>
+</tr>
+<tr>
+<td style="text-align:left">SNS notification for every log file delivery?</td>
+<td style="text-align:left">Yesを選択</td>
+</tr>
+<tr>
+<td style="text-align:left">SNS topic (new)*</td>
+<td style="text-align:left">Yesを選択</td>
+</tr>
+</tbody>
+</table>
+<p>※*は必須入力項目です。<br>※SNSについては、省略します。<br><a href="/2014/07/04/cloudtrail-on-tokyo-region/スクリーンショット-2014-07-03-01.41.46.png"><img src="/2014/07/04/cloudtrail-on-tokyo-region/スクリーンショット-2014-07-03-01.41.46.png" alt="スクリーンショット 2014-07-03 01.41.46"></a></p>
+<ul>
+<li><p>で、おしまいです。<br><a href="/2014/07/04/cloudtrail-on-tokyo-region/スクリーンショット-2014-07-03-08.35.28.png"><img src="/2014/07/04/cloudtrail-on-tokyo-region/スクリーンショット-2014-07-03-08.35.28.png" alt="スクリーンショット 2014-07-03 08.35.28"></a></p>
+</li>
+<li><p>とれてますね。^ ^<br><a href="/2014/07/04/cloudtrail-on-tokyo-region/スクリーンショット-2014-07-03-08.50.32.png"><img src="/2014/07/04/cloudtrail-on-tokyo-region/スクリーンショット-2014-07-03-08.50.32.png" alt="スクリーンショット 2014-07-03 08.50.32"></a></p>
+</li>
+<li><p>中身をみましたが、jsonがモザイクだらけになりそうだったので割愛します。<br>アクセスキーやらいろいろあったので。SNSを使っているのでメールで通知もきました。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/07/04/cloudtrail-on-tokyo-region/" data-id="gse8ibd73l7hbv7q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AWS/">AWS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CloudTrail/">CloudTrail</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-jaws-ug-e38195e38184e3819fe381bee694afe983a8e7acacefbc94e59b9ee58b89e5bcb7e4bc9ae38292e9968be582ace38197e381a6e3818de381bee38197e3819f" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/06/28/jaws-ug-e38195e38184e3819fe381bee694afe983a8e7acacefbc94e59b9ee58b89e5bcb7e4bc9ae38292e9968be582ace38197e381a6e3818de381bee38197e3819f/" class="article-date">
+  <time datetime="2014-06-28T07:19:33.000Z" itemprop="datePublished">Jun 28 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/AWS/">AWS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/28/jaws-ug-e38195e38184e3819fe381bee694afe983a8e7acacefbc94e59b9ee58b89e5bcb7e4bc9ae38292e9968be582ace38197e381a6e3818de381bee38197e3819f/">JAWS-UG さいたま支部第４回勉強会を開催してきました。#jawsug #jawsug_saitama</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨日、JAWS-UG さいたま支部第４回勉強会を開催してきました。<br>今回はそれぞれのクラウド業者の方々にきていただきました。<br>場所は<a href="http://office7f.com/" title="コワーキングスペース7F" target="_blank" rel="external">コワーキングスペース7F</a>で、ご好意で1000円➡500円にしていただきました。<br>いつも感謝しております。<br>twitterのハッシュタグはこちらです。#jawsug #jawsug_saitama</p>
+<p>まずは、こちらがイベントページです。<br>その前の週のJAWS-UG 東京の第２２回で宣伝させた頂いたtwitterの内容になります。</p>
+<blockquote>
+<p>さきほど、宣伝させていただきました。さいたま支部です。宜しくお願いします。&#10;JAWS-UG さいたま支部 第４回勉強会&#10;<a href="http://t.co/sWDG33NeJw" target="_blank" rel="external">http://t.co/sWDG33NeJw</a>&#10;&#10;懇親会はコチラ&#10;<a href="http://t.co/Cjk0JegG5t" target="_blank" rel="external">http://t.co/Cjk0JegG5t</a>&#10;&#10;<a href="https://twitter.com/hashtag/jawsug?src=hash" target="_blank" rel="external">#jawsug</a> <a href="https://twitter.com/hashtag/jawsug_saitama?src=hash" target="_blank" rel="external">#jawsug_saitama</a><br>&mdash; f_prg (@f_prg) <a href="https://twitter.com/f_prg/statuses/479961227121020928" target="_blank" rel="external">2014, 6月 20</a></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</blockquote>
+<hr>
+<p><strong>13:00～13:30 オープニング　若林さん</strong><br>まずは挨拶をさせていただきまして、前回のときと同様に来ていただいた方皆様に<br>アンケートをとらせていただき、最後のワークショップに使わせていただきました。</p>
+<hr>
+<p><strong>13:30～14:20　VPC Peering &amp; IP in IP Tunneling<br>　　　　　　　　保刈さん(JAWS-UG さいたま支部)</strong><br>まずは、今のAWSの状況。全台で数千台、うちVPCが数百台でそうでないものがあり、年内に移動したいとのことでした。<br>DCを中心としたHUB構成から、DC利用がなくなるVPC利用の再設計。そこで、VPC Peeringを選択。<br>向こうのVPCともお話がしたいかも➡遊び心！<br>デモをするところでしたが、起動できず。ここで次に。<br>あとでリベンジとなりました。</p>
+<hr>
+<p><strong>14:20～15:10　AWSが絶対やらない事を5つやってみた<br>　　　　　　　　末留様(IDCフロンティア)</strong></p>
+<blockquote>
+<p>IDCフロンティア様！はじまります。&#10;<a href="https://twitter.com/hashtag/jawsug?src=hash" target="_blank" rel="external">#jawsug</a> <a href="https://twitter.com/hashtag/jawsug_saitama?src=hash" target="_blank" rel="external">#jawsug_saitama</a> <a href="http://t.co/cxlSfIhkdf" target="_blank" rel="external">pic.twitter.com/cxlSfIhkdf</a><br>&mdash; f_prg (@f_prg) <a href="https://twitter.com/f_prg/statuses/482746971040387072" target="_blank" rel="external">2014, 6月 28</a></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</blockquote>
+<p>今月30様になられたそうです。今日は、千葉から来たので野田線と武蔵野線で迷割れました。。<br>ディズニーランドと成田空港が千葉にはあるぞと強めの地域アピール！<br>サードウェーブ（PCショップドスパラ）に入り、IT業界へ。<br>IDCFは国内最大！</p>
+<p>今回のネタはタイトルから決まっていて、５つの項目を探したそうです。</p>
+<ul>
+<li>①ハイブリッド構成<br>L2接続で物理サーバつなげられる。<br>1Gbpsで使える。ゲーム会社に受けがいい。<br>物理サーバにFusion ioを接続。</li>
+<li>②オリジナリティあふれるサービス<br>ネイティブアプリ向けプラットフォーム<br>資金決済法に基づくレポートがつくれる。これは面白い。国内向け。<br>これから、MBaas機能をつけていきたい。</li>
+</ul>
+<p>開発工数を削減し、そのゲームでビジネスするか考えた。</p>
+<ul>
+<li>③Naas(7月にサービス予定)<br>DDos対策, IDS/IPSがすでに入っており、申し込むだけで使えるサービス。（東日本のみ）<br>WAFの機能提供、BigIPを購入してあるのでそれを共有するサービス。（白河のみ）<br>フロントのバランシングもできる。</li>
+<li>※クローズドな技術コミュニティ<br>急成長中のIT企業からCTOが集結。<br>２ヶ月のひっそりとした会合。</li>
+<li>④製販一体<br>仮想ルータを使っていたが300M 〜 400Mの帯域を越えた対策として<br>10Gbpsの専用線を増設し、Yahooのトップに載った際の対策。</li>
+</ul>
+<p>ブラックボックスが増えている。<br>物理ホストマシンの負荷調査・移動をしてくれる。<br>ストレージも同様の対応。神サポートを目指しているとのことです。</p>
+<ul>
+<li>⑤おもてなし<br>AWS は DIY(Do It Yourself).<br>日本はベンダーの提案を求めている。<br>目的・課題から探すサービスを。お客様目線のご提案を。<br>Face to Faceでお話するための人がいます。<br>お客様のビジネスを成長させるバートナーになる姿勢。</li>
+</ul>
+<p><strong>質疑応答*</strong>   国内ベンダーは、ハイブリッドはかぶってないでしょうか？<br>基盤調査は普通にやっている。AWSもCloudwatchの調査もやってくれる。</p>
+<p>お客様にその基盤調査などを他のお客様の提案をしたそうです。<br>スマホのリズムゲームでの経験からの提案で２社受注をした。<br>DBは物理にした。<br>ボトルネックとなる最初のコンテンツダウンロードは、CDNを別途用意したそうです。</p>
+<ul>
+<li>社内のノウハウやその共有はどうしてる？<br>正社員は150人ぐらいで特に問題はでていない。<br>社内で共有をしている。</li>
+</ul>
+<hr>
+<p><strong>15:20～16:10　「ニフティクラウド」AWSとの違いと今後の展望<br>　　　　　　　　佐々木様(ニフティ クラウドプラットフォーム部長)</strong></p>
+<blockquote>
+<p>次はnifty様です。&#10;<a href="https://twitter.com/hashtag/jawsug?src=hash" target="_blank" rel="external">#jawsug</a> <a href="https://twitter.com/hashtag/jawsug_saitama?src=hash" target="_blank" rel="external">#jawsug_saitama</a> <a href="http://t.co/DDaSMfSSdV" target="_blank" rel="external">pic.twitter.com/DDaSMfSSdV</a><br>&mdash; f_prg (@f_prg) <a href="https://twitter.com/f_prg/statuses/482757224482095104" target="_blank" rel="external">2014, 6月 28</a></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</blockquote>
+<p>まずはniftyの事業について。クラウド事業、WEBサービス事業、ISP事業の３本。<br>主力商品はIaaS。PaaS提供も。SaaSもやっております。。<br>クラウドは3000件の利用実績。<br>TV放送後のECサイトの急激トラフィック対応。<br>ドラゴンクエストの事例。<br>ハイブリッド構成。IDCF様とかぶった。（笑）<br>niftyクラウドオートメーション。Chefベースのオートメーション機能。</p>
+<ul>
+<li>同じか違うか。<br>データベース、DNS、メール、キュー、デプロイ、マネジメント、（アプリなど）<br>同じではないが、似ている。</li>
+<li>ニフティクラウドエンジニアリングパーツ<br>　ニフティクラウドRDB。<br>　ニフティクラウドDNS。<br>　ニフティクラウドESS。<br>　　2700万人同時配信の実績がある。<br>　ニフティクラウドオートメーション<br>　　月額利用料は無料。<br>　機能・メニューは結構似ているように頑張っている。</li>
+<li><p>違うところ<br>日本語完全対応。というか日本語しか無い。<br>国内法準拠。ネットワークが超強力。<br>海外でも使える。クララオンライン事例。</p>
+</li>
+<li><p>今後の展望<br>コンセプト的な話。ビジネスや生活。<br>　丸善ジュンク堂様。<br>　WEBで書籍予約➡取り置きサービス。</p>
+</li>
+</ul>
+<p>　博報堂プロダクツ様。<br>　Lineによるアクセス負荷への対応も。</p>
+<ul>
+<li>今後どうするのか？<br>インターネットはもう終わった。<br>　パソコン➡スマホ。<br>　パソコンは、0.8％減っている。スマホ、3.5％増えている。</li>
+</ul>
+<p>nifty mobile backend<br>　開発者はアプリ開発に注力。<br>　プッシュ通知、データストア、ファイルストア、会員管理、SNS連携、位置情報機能を一通りそろえている。<br>　サーバ側の開発・運用をしなくていい。</p>
+<p>　ドラクエ１の事例。プッシュ通知350万通知。</p>
+<p>　パズうま。128万の開発費など低コストになった。</p>
+<p>スマホファースト<br>Monaca(アシアル）、Scirocco cloud、5Rocks<br>と連携など。</p>
+<ul>
+<li><p>まとめ<br>AWSとの違いではなく、似せている。</p>
+</li>
+<li><p>おまけ<br>人材募集中。採用ページと採用担当ブログなどいろいろやっている。<br>無料セミナー。cnetでエンジニアリングパーツが見れます。<br>ニフティクラウドエバンジェリストによる勉強。提案等いろいろしております。</p>
+</li>
+</ul>
+<hr>
+<p><strong>16:10～17:00　Microsoft Azure 上にある開発環境を使った node.js でのアプリケーション開発<br>　　　　　　　　大田様(日本マイクロソフト エバンジェリスト)</strong><br>Microsoft Azure。</p>
+<blockquote>
+<p>Microsoft Azureという名称ですよ。&#10;<a href="https://twitter.com/hashtag/jawsug?src=hash" target="_blank" rel="external">#jawsug</a> <a href="https://twitter.com/hashtag/jawsug_saitama?src=hash" target="_blank" rel="external">#jawsug_saitama</a> <a href="http://t.co/zKUv6Kb6fU" target="_blank" rel="external">pic.twitter.com/zKUv6Kb6fU</a><br>&mdash; f_prg (@f_prg) <a href="https://twitter.com/f_prg/statuses/482770964728799232" target="_blank" rel="external">2014, 6月 28</a></p>
+<p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><br>エバとエヴァの違い。(笑)</p>
+</blockquote>
+<ul>
+<li><p>Microsoft Venturesについて<br>BizSpark。Azure無料枠。オフィスなど無料提供。<br>コミュニティ。<br>アクセラレータ。ユーザーを成長をさせる。<br>ファンド。ユーザーへの投資。<br>あと、Microsoft Ventures Barをやっています。</p>
+<blockquote>
+<p>マイクロソフトベンチャーズバーはこんなことやってます。&#10;<a href="https://twitter.com/hashtag/jawsug?src=hash" target="_blank" rel="external">#jawsug</a> <a href="https://twitter.com/hashtag/jawsug_saitama?src=hash" target="_blank" rel="external">#jawsug_saitama</a> <a href="http://t.co/KhNvlZK9ac" target="_blank" rel="external">pic.twitter.com/KhNvlZK9ac</a><br>&mdash; f_prg (@f_prg) <a href="https://twitter.com/f_prg/statuses/482772606639034368" target="_blank" rel="external">2014, 6月 28</a></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</blockquote>
+</li>
+<li><p>Azureについて<br>コンピューティング、データ管理、ネットワーク、アプリケーション、開発言語。<br>IaaS 仮想マシン。Paasも。<br>IaaSの仮想マシンはハイパーバイザーの上で動いている。<br>Live Migrationで、動作したままオンプレから移行ができる。</p>
+</li>
+</ul>
+<p>Microsoft Open Technologiesというサイトでは<br>いろいろな人がつくった仮想マシンがあるそうです。<br><a href="http://msopentech.com/" title="http://msopentech.com/" target="_blank" rel="external">http://msopentech.com/</a></p>
+<p>BLOBに配置されたVHDファイルの堅牢性で、常に３つ保存されており安全である。<br>西日本DCと東日本DCで継続的な複製ができて、６つもコピーとなるとのことです。</p>
+<ul>
+<li><p>ここで、デモをしていただき仮想マシンの立ち上げをしました。<br>瞬間的に立ち上がりました。とても簡単そうです。</p>
+</li>
+<li><p>PaaS: Azure Web Sites<br>Drupal, Wordpressなど用意されている。<br>AzureストアでSendgridのアドインを購入するとメール配信が使える。</p>
+</li>
+</ul>
+<p>githubにある既存ソースをデプロイできる。<br>サービスを止めずにサーバリソースの変更（自動も可能）ができて<br>インフラ管理を減らすのが特徴となっている。</p>
+<ul>
+<li>Web Sitesには後から付与できる機能がある。<br>Visutal Studio Onlineは画面分割もできる。HTMLのプレビューと一緒に開発できる。<br>html, css, javascript<br>入力補間もされる。変数の宣言もチェックしてくれる。<br>関数の定義ジャンプ。定義の名称変更も可能。git連携も可能。</li>
+</ul>
+<hr>
+<p><strong>VPC Peeringのデモリベンジ。</strong><br>こちら、デモが動き成功することができました。<br>間の休憩間で質疑応答があったそうで、構成についての質問が会ったようです。<br>単純なスクリプトを流すだけとのことです。<br><a href="http://blog.star-flare.com/wp-content/uploads/2014/06/20140629-134209-49329694.jpg" target="_blank" rel="external"><img src="http://blog.star-flare.com/wp-content/uploads/2014/06/20140629-134209-49329694.jpg" alt="20140629-134209-49329694.jpg"></a></p>
+<hr>
+<p><strong><br>17:10〜17:40　まとめ　若林さん
+</strong><br><a href="http://blog.star-flare.com/wp-content/uploads/2014/06/20140629-134210-49330029.jpg" target="_blank" rel="external"><img src="http://blog.star-flare.com/wp-content/uploads/2014/06/20140629-134210-49330029.jpg" alt="20140629-134210-49330029.jpg"></a><br>・こんなサービス作ったら面白くないですか？<br>・各社に期待すること。<br>・JAWS-UGさいたまに期待すること</p>
+<p>前回と同様に４つのチームに分かれて、ワークショップとなりました。<br>ちょっと時間が前倒しになったので、<br>コミュニケーションをとり<br>意見交換、提案など<br>をさせていただきました。</p>
+<hr>
+<p>さいごに、私のまとめとなります。</p>
+<p>いろいろクラウドが出てきており当然ながら、各社差別化をしておりました。<br>似せたりすることも、逆のものを作るのも、コミュニティでの活動も<br>企業として頑張っておられるようでした。<br>ワークショップで各社への希望というよりクラウドへの希望が出てましたので、<br>もっともっと変わっていく事でしょう。</p>
+<p>AWSも、また更に変わっていくことを期待しております。</p>
+<p>変わったそのときに、<br>自分に何ができるかどうか<br>自分が変われるどうか<br>を考えて、今は進んでみることとします。</p>
+<p>来週はJAWS-UG三都物語のスタッフとして頑張ってきます。<br>そのときにお会いできましたら気軽にお声がけください。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/06/28/jaws-ug-e38195e38184e3819fe381bee694afe983a8e7acacefbc94e59b9ee58b89e5bcb7e4bc9ae38292e9968be582ace38197e381a6e3818de381bee38197e3819f/" data-id="vebko4z0wea22s2h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/CloudTrail/">CloudTrail</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Nodejs/">Node.js</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Varnish/">Varnish</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/">AWS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CloudTrail/">CloudTrail</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Node.js</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Varnish/">Varnish</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rbenv/">rbenv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/勉強会/">勉強会</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AWS/" style="font-size: 16.67px;">AWS</a><a href="/tags/CloudTrail/" style="font-size: 13.33px;">CloudTrail</a><a href="/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/tags/JAWS-UG/" style="font-size: 10.00px;">JAWS-UG</a><a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a><a href="/tags/Nodejs/" style="font-size: 20.00px;">Node.js</a><a href="/tags/Ruby/" style="font-size: 13.33px;">Ruby</a><a href="/tags/Varnish/" style="font-size: 13.33px;">Varnish</a><a href="/tags/github/" style="font-size: 13.33px;">github</a><a href="/tags/rbenv/" style="font-size: 13.33px;">rbenv</a><a href="/tags/勉強会/" style="font-size: 13.33px;">勉強会</a><a href="/tags/勉強会・セミナー/" style="font-size: 10.00px;">勉強会・セミナー</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/08/16/hexo_wordpress_migration/">HexoにWordPressの記事をマイグレートする</a>
+          </li>
+        
+          <li>
+            <a href="/2014/08/16/hexo_easy_post/">Hexoの新規投稿をちょっと使いやすくする</a>
+          </li>
+        
+          <li>
+            <a href="/2014/08/13/hexo_admin_plugin/">Hexoのhexo-adminプラグインで管理画面を使う</a>
+          </li>
+        
+          <li>
+            <a href="/2014/08/11/hexo_deploy_github/">Hexoでgithubにデプロイする</a>
+          </li>
+        
+          <li>
+            <a href="/2014/08/10/hexo_image_setting/">Hexoで画像の設定する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 f_prg<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

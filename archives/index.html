@@ -66,6 +66,98 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo_wordpress_migration" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/16/hexo_wordpress_migration/" class="article-date">
+  <time datetime="2014-08-15T22:48:24.000Z" itemprop="datePublished">Aug 16 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Nodejs/">Node.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/16/hexo_wordpress_migration/">HexoにWordPressの記事をマイグレートする</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>HexoにWordPressの記事をマイグレートする</p>
+<h1 id="はじめに">はじめに</h1>
+<p>こんにちは。インフラエンジニアレベル１の<a href="http://twitter.com/f_prg" title="f_prg" target="_blank" rel="external">f_prg</a>です。<br>今までWordPressでブログを構築し運用していたのですが<br>ログインのブルートフォースアタックなどセキュリティ面を考え、<br>Hexoでデプロイ静的ファイルのサイトに移行しようと思います。</p>
+<h1 id="HexoにWordPressの記事をマイグレートする">HexoにWordPressの記事をマイグレートする</h1>
+<h2 id="ブログを新規構築する">ブログを新規構築する</h2>
+<p>ブログを新規構築します。<br>既に記事を作っている場合、マイグレートすると記事が混ざりそうなので<br>ブログを構築してファイルを移動していきたいと思います。<br>新規構築のブログにWordPressの記事をマイグレートすれば、比較もしやすいと考えました。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="number">08</span>:<span class="number">33</span>:<span class="number">08</span>][f_prg@mba:node-hexo-blog]<span class="comment"># hexo init my-wp-migrate</span></div><div class="line">[info] Copying data</div><div class="line">[info] You are almost <span class="keyword">done</span>! Don<span class="string">'t forget to run `npm install` before you start blogging with Hexo!</span></div></pre></td></tr></table></figure>
+
+<h2 id="WordPressのmigratorプラグインをインストールします。">WordPressのmigratorプラグインをインストールします。</h2>
+<p>hexoのドキュメントはコチラです。<br><a href="http://hexo.io/docs/migration.html" title="http://hexo.io/docs/migration.html" target="_blank" rel="external">http://hexo.io/docs/migration.html</a><br>npmのページはこちらです。<br><a href="https://www.npmjs.org/package/hexo-migrator-wordpress" title="https://www.npmjs.org/package/hexo-migrator-wordpress" target="_blank" rel="external">https://www.npmjs.org/package/hexo-migrator-wordpress</a></p>
+<p>インストールは下のコマンドで実行できます。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line">[<span class="number">08</span>:<span class="number">35</span>:<span class="number">18</span>][f_prg<span class="variable">@mba</span>:node-hexo-blog]# cd my-wp-migrate/</div><div class="line">[<span class="number">08</span>:<span class="number">39</span>:<span class="number">01</span>][f_prg<span class="variable">@mba</span>:my-wp-migrate]# npm install hexo-migrator-wordpress --save</div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/hexo-migrator-wordpress</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/hexo-migrator-wordpress</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/xml2js/0.4.2</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/async</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/to-markdown/0.0.1</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/request</span></div><div class="line">npm http <span class="number">200</span> https:<span class="comment">//registry.npmjs.org/async</span></div><div class="line">npm http <span class="number">200</span> https:<span class="comment">//registry.npmjs.org/request</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/to-markdown/0.0.1</span></div><div class="line">npm http <span class="number">200</span> https:<span class="comment">//registry.npmjs.org/xml2js/0.4.2</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/xml2js/-/xml2js-0.4.2.tgz</span></div><div class="line">npm http <span class="number">200</span> https:<span class="comment">//registry.npmjs.org/xml2js/-/xml2js-0.4.2.tgz</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/sax</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/xmlbuilder</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/sax</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/qs</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/json-stringify-safe</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/mime-types</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/forever-agent</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/node-uuid</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/form-data</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/tough-cookie</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/tunnel-agent</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/http-signature</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/oauth-sign</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/hawk/1.1.1</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/aws-sign2</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/stringstream</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/json-stringify-safe</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/forever-agent</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/node-uuid</span></div><div class="line">npm http <span class="number">200</span> https:<span class="comment">//registry.npmjs.org/qs</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/form-data</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/tough-cookie</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/tunnel-agent</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/oauth-sign</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/http-signature</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/aws-sign2</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/stringstream</span></div><div class="line">npm http <span class="number">200</span> https:<span class="comment">//registry.npmjs.org/xmlbuilder</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/mime-types</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/hawk/1.1.1</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/xmlbuilder/-/xmlbuilder-2.4.3.tgz</span></div><div class="line">npm http <span class="number">200</span> https:<span class="comment">//registry.npmjs.org/xmlbuilder/-/xmlbuilder-2.4.3.tgz</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/mime</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/combined-stream</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/combined-stream</span></div><div class="line">npm http <span class="number">200</span> https:<span class="comment">//registry.npmjs.org/mime</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/ctype/0.5.2</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/assert-plus/0.1.2</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/asn1/0.1.11</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/delayed-stream/0.0.5</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/assert-plus/0.1.2</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/ctype/0.5.2</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/punycode</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/delayed-stream/0.0.5</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/punycode</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/sntp</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/hoek</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/boom</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/cryptiles</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/sntp</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/hoek</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/cryptiles</span></div><div class="line">npm http <span class="number">200</span> https:<span class="comment">//registry.npmjs.org/boom</span></div><div class="line">npm http <span class="number">304</span> https:<span class="comment">//registry.npmjs.org/asn1/0.1.11</span></div><div class="line">npm http GET https:<span class="comment">//registry.npmjs.org/lodash-node</span></div><div class="line">npm http <span class="number">200</span> https:<span class="comment">//registry.npmjs.org/lodash-node</span></div><div class="line">hexo-migrator-wordpress<span class="variable">@0</span><span class="number">.1</span><span class="number">.1</span> node_modules/hexo-migrator-wordpress</div><div class="line">├── async<span class="variable">@0</span><span class="number">.9</span><span class="number">.0</span></div><div class="line">├── to-markdown<span class="variable">@0</span><span class="number">.0</span><span class="number">.1</span></div><div class="line">├── request<span class="variable">@2</span><span class="number">.40</span><span class="number">.0</span> (json-stringify-safe<span class="variable">@5</span><span class="number">.0</span><span class="number">.0</span>, forever-agent<span class="variable">@0</span><span class="number">.5</span><span class="number">.2</span>, aws-sign2<span class="variable">@0</span><span class="number">.5</span><span class="number">.0</span>, oauth-<span class="keyword">sign</span><span class="variable">@0</span><span class="number">.3</span><span class="number">.0</span>, stringstream<span class="variable">@0</span><span class="number">.0</span><span class="number">.4</span>, tunnel-agent<span class="variable">@0</span><span class="number">.4</span><span class="number">.0</span>, qs<span class="variable">@1</span><span class="number">.0</span><span class="number">.2</span>, node-uuid<span class="variable">@1</span><span class="number">.4</span><span class="number">.1</span>, mime-types<span class="variable">@1</span><span class="number">.0</span><span class="number">.2</span>, tough-cookie<span class="variable">@0</span><span class="number">.12</span><span class="number">.1</span>, form-data<span class="variable">@0</span><span class="number">.1</span><span class="number">.4</span>, hawk<span class="variable">@1</span><span class="number">.1</span><span class="number">.1</span>, http-signature<span class="variable">@0</span><span class="number">.10</span><span class="number">.0</span>)</div><div class="line">└── xml2js<span class="variable">@0</span><span class="number">.4</span><span class="number">.2</span> (sax<span class="variable">@0</span><span class="number">.5</span><span class="number">.8</span>, xmlbuilder<span class="variable">@2</span><span class="number">.4</span><span class="number">.3</span>)</div></pre></td></tr></table></figure>
+
+<h2 id="wordpressからXMLをダウンロードする。">wordpressからXMLをダウンロードする。</h2>
+<ol>
+<li>使っているwordpressの管理画面にログインする</li>
+<li>メニューのツール—&gt;エクスポートよりXMLをダウンロードしてください。</li>
+<li>ダウンロードしたファイルを、my-wp-migrateのフォルダに置きます。</li>
+</ol>
+<h2 id="migrateコマンドを実行する">migrateコマンドを実行する</h2>
+<p>下のコマンドのmigrateを実行しますと、解析してファイルが作成されます。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[<span class="number">09</span>:<span class="number">13</span>:<span class="number">52</span>][f_prg@mba:my-wp-migrate]<span class="comment"># hexo migrate wordpress ./f_prg.wordpress.2014-08-16.xml </span></div><div class="line">[info] Analyzing ./f_prg.wordpress.<span class="number">2014</span>-<span class="number">08</span>-<span class="number">16</span>.xml...</div><div class="line">[info] Page found: 紹介</div><div class="line">[info] Page found: About</div><div class="line">[info] Post found: </div><div class="line">[info] Page found: </div><div class="line">[info] Page found: </div><div class="line"></div><div class="line">　　下書きとか一覧に出てるので割愛します。</div><div class="line"></div><div class="line">[info] Post found: </div><div class="line">[info] <span class="number">159</span> posts migrated.</div></pre></td></tr></table></figure>
+
+<h2 id="生成されたファイルを確認する">生成されたファイルを確認する</h2>
+<p>今回は手動で記事のファイルを移動させました。その後に改修をした作業内容を紹介します。<br>「Varnish 4.0 Release Partyに参加してきました。 #v4rp #v4rp_tokyo」<br>という記事になります。</p>
+<h3 id="ファイル名の変更">ファイル名の変更</h3>
+<p>日本語のタイトル名からファイル名を決定しているようなので<br>varnish-4-0-release-partye381abe58f82e58aa0e38197e381a6e3818de381bee38197e3819fe38082-v4rp-v4rp_tokyo.md<br>となってますね。ちょっと使いづらいので、varnish-4-0-release-party.mdに変えます。<br><a href="/2014/04/29/varnish-4-0-release-party/" title="/2014/04/29/varnish-4-0-release-party/">/2014/04/29/varnish-4-0-release-party/</a></p>
+<h3 id="ファイルのプロパティ">ファイルのプロパティ</h3>
+<p>WordPressのidとcommentが入ってますね。<br>まあ、これはこのままで大丈夫のようです。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">title: "Varnish 4.0 Release Partyに参加してきました。 #v4rp #v4rp_tokyo"</div><div class="line">id: 1459</div><div class="line">comment: false</div><div class="line">categories:</div><div class="line">  - Varnish</div><div class="line">date: 2014-04-29 20:12:45</div><div class="line">tags:</div><div class="line"><span class="bullet">- </span>AWS</div><div class="line"><span class="bullet">- </span>Varnish</div><div class="line"><span class="bullet">- </span>勉強会</div></pre></td></tr></table></figure>
+
+<h3 id="ファイルの内容">ファイルの内容</h3>
+<p>markdownの部分には特に問題はありませんでした。<br>もしかしたら、このファイルは上手く行ったのかもしれませんね。<br>ただ、画像については次の項目で独自の改修をしました。</p>
+<h3 id="画像の変更">画像の変更</h3>
+<p>画像の保存先を変えます。<br>_config.ymlで</p>
+<figure class="highlight _config.yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">post_asset_folder</span>: <span class="string">true</span></div></pre></td></tr></table></figure>
+
+<p>と設定していますので<br>source/_posts/2014/04/29/varnish-4-0-release-party<br>というフォルダを作成して移動させました。</p>
+<h3 id="markdownの画像のパス">markdownの画像のパス</h3>
+<p>画像のパスのwp-contentを変換させます。フォルダをそのままアップしてもよかったのですが<br>手動で画像の確認をしながら移動させました。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="link_label">![20140429-201943.jpg</span>](<span class="link_url">http://blog.star-flare.com/wp-content/uploads/2014/04/20140429-201943.jpg</span>)](<span class="link_url">http://blog.star-flare.com/wp-content/uploads/2014/04/20140429-201943.jpg</span>)</div><div class="line">[<span class="link_label">![20140429-201953.jpg</span>](<span class="link_url">http://blog.star-flare.com/wp-content/uploads/2014/04/20140429-201953.jpg</span>)](<span class="link_url">http://blog.star-flare.com/wp-content/uploads/2014/04/20140429-201953.jpg</span>)</div><div class="line">[<span class="link_label">![20140429-202000.jpg</span>](<span class="link_url">http://blog.star-flare.com/wp-content/uploads/2014/04/20140429-202000.jpg</span>)](<span class="link_url">http://blog.star-flare.com/wp-content/uploads/2014/04/20140429-202000.jpg</span>)</div></pre></td></tr></table></figure>
+
+<p>だったのを</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[<span class="link_label">![20140429-201943.jpg</span>](<span class="link_url">/2014/04/29/varnish-4-0-release-party/20140429-190537.jpg</span>)](<span class="link_url">/2014/04/29/varnish-4-0-release-party/20140429-201943.jpg</span>)</div><div class="line">[<span class="link_label">![20140429-201943.jpg</span>](<span class="link_url">/2014/04/29/varnish-4-0-release-party/20140429-201943.jpg</span>)](<span class="link_url">/2014/04/29/varnish-4-0-release-party/20140429-201943.jpg</span>)</div><div class="line">[<span class="link_label">![20140429-201953.jpg</span>](<span class="link_url">/2014/04/29/varnish-4-0-release-party/20140429-201953.jpg</span>)](<span class="link_url">/2014/04/29/varnish-4-0-release-party/20140429-201953.jpg</span>)</div><div class="line">[<span class="link_label">![20140429-202000.jpg</span>](<span class="link_url">/2014/04/29/varnish-4-0-release-party/20140429-202000.jpg</span>)](<span class="link_url">/2014/04/29/varnish-4-0-release-party/20140429-202000.jpg</span>)</div></pre></td></tr></table></figure>
+
+<p>としました。</p>
+<h1 id="まとめ">まとめ</h1>
+<p>私は記事の見直しをかけて、手動で行いました。<br>記事のファイルを移動し、wp-contentファイルをアップロードすれば<br>移行にそれほど時間がかからないかもしれませんね。</p>
+<h1 id="参考資料・リンク">参考資料・リンク</h1>
+<p><a href="http://hexo.io/docs/migration.html" title="http://hexo.io/docs/migration.html" target="_blank" rel="external">http://hexo.io/docs/migration.html</a><br><a href="https://www.npmjs.org/package/hexo-migrator-wordpress" title="https://www.npmjs.org/package/hexo-migrator-wordpress" target="_blank" rel="external">https://www.npmjs.org/package/hexo-migrator-wordpress</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/16/hexo_wordpress_migration/" data-id="anx6v3lmyfjf7lrv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hexo_easy_post" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/08/16/hexo_easy_post/" class="article-date">
@@ -84,7 +176,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/08/16/hexo_easy_post/">hexo_easy_post</a>
+      <a class="article-title" href="/2014/08/16/hexo_easy_post/">Hexoの新規投稿をちょっと使いやすくする</a>
     </h1>
   
 
@@ -94,8 +186,8 @@
       
         <p>Hexoの新規投稿をちょっと使いやすくする</p>
 <h1 id="はじめに">はじめに</h1>
-<p>こんにちは。インフラエンジニアレベル１の<a href="http://twitter.com/f_prg" title="f_prg" target="_blank" rel="external">f_prg</a>です。<br>Hexoで新規投稿ファイルを生成しますと、source/_postsフォルダにファイルが生成され、投稿していきますと、ファイルの管理が必要になります。<br>今回はちょっとだけ投稿を使いやすくする方法をご紹介します。</p>
-<h1 id="日付ごとにファイルを生成するようにしする">日付ごとにファイルを生成するようにしする</h1>
+<p>こんにちは。インフラエンジニアレベル１の<a href="http://twitter.com/f_prg" title="f_prg" target="_blank" rel="external">f_prg</a>です。<br>Hexoで新規投稿でファイルを生成しますと、source/_postsフォルダにファイルが生成されます。今後投稿していきますと、ファイルの管理が必要になりそうです。<br>今回はちょっとだけ投稿を使いやすくする方法をご紹介します。</p>
+<h1 id="日付ごとにファイルを生成するようにする">日付ごとにファイルを生成するようにする</h1>
 <h2 id="_config-ymlの設定を変更する">_config.ymlの設定を変更する</h2>
 <p>初期状態のconfigは下記の通りですが</p>
 <figure class="highlight _config.yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new_post_name: :title.md # <span class="keyword">File</span> name <span class="keyword">of</span> <span class="keyword">new</span> posts</div></pre></td></tr></table></figure>
@@ -109,9 +201,10 @@
 
 <p>と日付ごとのフォルダができて、ファイルが生成されます。</p>
 <h1 id="まとめ">まとめ</h1>
-<p>できるかなーと思ってちょっとやったら、とても簡単にできました。<br>ちょっと_config.yml変更させるだけで、いろいろとできそうです。</p>
+<p>できるかなーと思ってちょっとやったら、とても簡単にできました。<br>ちょっと_config.yml変更させるだけで、いろいろとできそうです。<br>その前の記事は、自分で移動させました。まあ。仕方が無いですね。<br>管理画面のhexo-adminプラグインを使っており<br>一覧で投稿日時がでてましたので、面倒な作業はなくドラッグアンドドロップの移動だけでした。</p>
+<p><a href="http://hexo.io/docs/migration.html" title="http://hexo.io/docs/migration.html" target="_blank" rel="external">http://hexo.io/docs/migration.html</a><br>こちらに同じような内容がありました。</p>
 <h1 id="参考資料・リンク">参考資料・リンク</h1>
-<p>今回はございません。</p>
+<p><a href="http://hexo.io/docs/migration.html" title="http://hexo.io/docs/migration.html" target="_blank" rel="external">http://hexo.io/docs/migration.html</a></p>
 
       
     </div>
@@ -187,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/13/hexo_admin_plugin/" data-id="hjpqtkwn7ldtzr3v" class="article-share-link">Share</a>
+      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/13/hexo_admin_plugin/" data-id="gksycl7rnl2m694y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Node.js</a></li></ul>
@@ -250,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/11/hexo_deploy_github/" data-id="5ff38r074oxs4mpa" class="article-share-link">Share</a>
+      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/11/hexo_deploy_github/" data-id="mppfdgojrwcmvs7s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
@@ -320,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_image_setting/" data-id="b56kbp2j4ibtwc0h" class="article-share-link">Share</a>
+      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_image_setting/" data-id="js2fi6x1a82m0dpe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Node.js</a></li></ul>
@@ -383,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_feed_plugin/" data-id="esyzd0lfdqey15uz" class="article-share-link">Share</a>
+      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_feed_plugin/" data-id="dabp21p0ariu3a9h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Node.js</a></li></ul>
@@ -442,7 +535,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_site_setup/" data-id="9c0n0clhrfzygu7c" class="article-share-link">Share</a>
+      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_site_setup/" data-id="8kh3wuod01qg9frh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Node.js</a></li></ul>
@@ -505,7 +598,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_install/" data-id="nwxj29we57w4m926" class="article-share-link">Share</a>
+      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hexo_install/" data-id="62wx7aq5pulh6p0o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Node.js</a></li></ul>
@@ -558,7 +651,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/mac_ruby_rbenv/" data-id="cxfbq09l12tgbc2j" class="article-share-link">Share</a>
+      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/mac_ruby_rbenv/" data-id="xviiyimblxjj6a3u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ruby/">Ruby</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rbenv/">rbenv</a></li></ul>
@@ -614,7 +707,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hello-world/" data-id="wgi22xfixweru9wf" class="article-share-link">Share</a>
+      <a data-url="http://star-flare-blog.s3-website-ap-northeast-1.amazonaws.com/2014/08/10/hello-world/" data-id="5lad66idm26bzz4s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -625,6 +718,10 @@
 
   
   
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
+    </nav>
+  
 </section>
         
           <aside id="sidebar">
@@ -633,7 +730,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Nodejs/">Node.js</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/CloudTrail/">CloudTrail</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Nodejs/">Node.js</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Varnish/">Varnish</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -642,7 +739,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rbenv/">rbenv</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/">AWS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CloudTrail/">CloudTrail</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Node.js</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ruby/">Ruby</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Varnish/">Varnish</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rbenv/">rbenv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/勉強会/">勉強会</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -651,7 +748,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/tags/Mac/" style="font-size: 10.00px;">Mac</a><a href="/tags/Nodejs/" style="font-size: 20.00px;">Node.js</a><a href="/tags/Ruby/" style="font-size: 10.00px;">Ruby</a><a href="/tags/github/" style="font-size: 10.00px;">github</a><a href="/tags/rbenv/" style="font-size: 10.00px;">rbenv</a>
+      <a href="/tags/AWS/" style="font-size: 16.67px;">AWS</a><a href="/tags/CloudTrail/" style="font-size: 13.33px;">CloudTrail</a><a href="/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/tags/JAWS-UG/" style="font-size: 10.00px;">JAWS-UG</a><a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a><a href="/tags/Nodejs/" style="font-size: 20.00px;">Node.js</a><a href="/tags/Ruby/" style="font-size: 13.33px;">Ruby</a><a href="/tags/Varnish/" style="font-size: 13.33px;">Varnish</a><a href="/tags/github/" style="font-size: 13.33px;">github</a><a href="/tags/rbenv/" style="font-size: 13.33px;">rbenv</a><a href="/tags/勉強会/" style="font-size: 13.33px;">勉強会</a><a href="/tags/勉強会・セミナー/" style="font-size: 10.00px;">勉強会・セミナー</a>
     </div>
   </div>
 
@@ -660,7 +757,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -672,7 +769,11 @@
       <ul>
         
           <li>
-            <a href="/2014/08/16/hexo_easy_post/">hexo_easy_post</a>
+            <a href="/2014/08/16/hexo_wordpress_migration/">HexoにWordPressの記事をマイグレートする</a>
+          </li>
+        
+          <li>
+            <a href="/2014/08/16/hexo_easy_post/">Hexoの新規投稿をちょっと使いやすくする</a>
           </li>
         
           <li>
@@ -685,10 +786,6 @@
         
           <li>
             <a href="/2014/08/10/hexo_image_setting/">Hexoで画像の設定する</a>
-          </li>
-        
-          <li>
-            <a href="/2014/08/10/hexo_feed_plugin/">HexoのRSSフィードプラグインを使ってみる</a>
           </li>
         
       </ul>
